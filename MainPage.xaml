@@ -1,0 +1,65 @@
+﻿<!-- MainPage.xaml -->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdventuresinHytheriaApp.MainPage"
+             xmlns:control="clr-namespace:AdventuresinHytheriaApp.Control"
+             xmlns:page="clr-namespace:AdventuresinHytheriaApp.Views"
+             xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons">
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+            <GradientStop Color="#0d1535" Offset="0.0" />
+            <GradientStop Color="#1e2660" Offset="0.5" />
+            <GradientStop Color="#0d1535" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <VerticalStackLayout>
+        <Grid RowDefinitions="*, *, *, 80,80" ColumnDefinitions="*" HorizontalOptions="Center" Padding="10">
+            <Image Grid.Row="0" 
+                   Background="Transparent" 
+                   Source="ainhpng.png" 
+                   HorizontalOptions="Center" 
+                   Aspect="Fill"/>
+            <Label Grid.Row="1" 
+                   FontFamily="Impact" 
+                   FontSize="35" 
+                   TextColor="#8a9bc4" 
+                   Text="Character Creation" 
+                   HorizontalOptions="Center"/>
+            <Image Grid.Row="2" 
+                   Source="golddividingornament.png"/>
+            <buttons:SfButton Grid.Row="3" 
+                              Background="#0d1535"
+                              Stroke="#8a9bc4"
+                              StrokeThickness="1"
+                              x:Name="btnCharacters" 
+                              WidthRequest="300"
+                              HeightRequest="50">
+                <buttons:SfButton.Content>
+                    <DataTemplate>
+                            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="8">
+                                <Image Source="user.png" VerticalOptions="Center" HeightRequest="30" WidthRequest="30"/>
+                                <Label Text="Characters" FontFamily="Impact" FontSize="35" VerticalOptions="Center" TextColor="White"/>
+                            </HorizontalStackLayout>
+                        </DataTemplate>
+                </buttons:SfButton.Content>
+            </buttons:SfButton>
+            <buttons:SfButton Grid.Row="4" 
+                  Background="#0d1535"
+                  Stroke="#8a9bc4"
+                  StrokeThickness="1"
+                  x:Name="btnRaces" 
+                  WidthRequest="300"
+                  HeightRequest="50">
+                <buttons:SfButton.Content>
+                    <DataTemplate>
+                        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="8">
+                            <Image Source="star.png" HeightRequest="30" VerticalOptions="Center" WidthRequest="30"/>
+                            <Label Text="Races" FontFamily="Impact" FontSize="35" VerticalOptions="Center" TextColor="White"/>
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </buttons:SfButton.Content>
+            </buttons:SfButton>
+        </Grid>
+
+    </VerticalStackLayout>
+</ContentPage>

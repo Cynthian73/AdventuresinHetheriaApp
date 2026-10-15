@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdventuresinHytheriaApp.Views.Races"
+             xmlns:editors="clr-namespace:Syncfusion.Maui.Core.Themes;assembly=Syncfusion.Maui.Inputs"
+             Title="Races"
+             BackgroundColor="#F5F7FA">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#F5F7FA">
+            <Label Text="Races" FontSize="32" TextColor="Black" HorizontalOptions="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
