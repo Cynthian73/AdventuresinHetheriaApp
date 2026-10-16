@@ -1,8 +1,8 @@
-namespace AdventuresinHytheriaApp.Views;
+namespace AdventuresinHetheriaApp.Pages;
 
-public partial class Races: ContentPage
-{ 
-	public Races()
+public partial class Characters : ContentPage
+{
+	public Characters()
 	{
 		InitializeComponent();
 		Shell.SetForegroundColor(this, Colors.White);

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdventuresinHetheriaApp.Pages.Characters"
+             Title="Characters"
+             BackgroundColor="#F5F7FA">
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+            <GradientStop Color="#0d1535" Offset="0.0" />
+            <GradientStop Color="#1e2660" Offset="0.5" />
+            <GradientStop Color="#0d1535" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <VerticalStackLayout>
+        <Grid RowDefinitions="*, *, *,40,40,40,40,40, 40, 40, 40, 40" ColumnDefinitions="*" HorizontalOptions="Center" Padding="5">
+            <Image Grid.Row="0" 
+            Background="Transparent" 
+            Source="ainhpng.png" 
+            HorizontalOptions="Center" 
+            Aspect="Fill"/>
+            <Label Grid.Row="1" 
+            FontFamily="Impact" 
+            FontSize="25" 
+            TextColor="#8a9bc4" 
+            Text="Characters" 
+            HorizontalOptions="Center"/>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

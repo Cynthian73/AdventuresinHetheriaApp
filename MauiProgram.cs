@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Syncfusion.Maui.Core.Hosting;
 
-namespace AdventuresinHytheriaApp
+namespace AdventuresinHetheriaApp
 {
     public static class MauiProgram
     {

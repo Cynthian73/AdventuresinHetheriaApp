@@ -1,4 +1,4 @@
-﻿namespace AdventuresinHytheriaApp
+﻿namespace AdventuresinHetheriaApp
 {
     public partial class AppShell : Shell
     {

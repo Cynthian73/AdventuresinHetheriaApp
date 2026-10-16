@@ -1,9 +1,8 @@
 ﻿<!-- MainPage.xaml -->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AdventuresinHytheriaApp.MainPage"
-             xmlns:control="clr-namespace:AdventuresinHytheriaApp.Control"
-             xmlns:page="clr-namespace:AdventuresinHytheriaApp.Views"
+             x:Class="AdventuresinHetheriaApp.MainPage"
+             xmlns:page="clr-namespace:AdventuresinHetheriaApp.Pages"
              xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons">
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -13,7 +12,7 @@
         </LinearGradientBrush>
     </ContentPage.Background>
     <VerticalStackLayout>
-        <Grid RowDefinitions="*, *, *,50,50,50,50,50, 50, 50" ColumnDefinitions="*" HorizontalOptions="Center" Padding="5">
+        <Grid RowDefinitions="*, *, *,40,40,40,40,40, 40, 40, 40, 40" ColumnDefinitions="*" HorizontalOptions="Center" Padding="5">
             <Image Grid.Row="0" 
                    Background="Transparent" 
                    Source="ainhpng.png" 
@@ -33,7 +32,8 @@
                               StrokeThickness="1"
                               x:Name="btnCharacters" 
                               WidthRequest="300"
-                              HeightRequest="40">
+                              HeightRequest="40"
+                              Clicked="OnCharactersButtonClicked" >
                 <buttons:SfButton.Content>
                     <DataTemplate>
                             <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
@@ -49,7 +49,8 @@
                   StrokeThickness="1"
                   x:Name="btnRaces" 
                   WidthRequest="300"
-                  HeightRequest="40">
+                  HeightRequest="40"
+                  Clicked="OnRacesButtonClicked">
                 <buttons:SfButton.Content>
                     <DataTemplate>
                         <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
@@ -155,8 +156,7 @@
                     </DataTemplate>
                 </buttons:SfButton.Content>
             </buttons:SfButton>
-
-
+            <Label Grid.Row="11" HorizontalOptions="Center" FontSize="18" TextColor="#8a9bc4" x:Name="lblVersion"/>
         </Grid>
 
     </VerticalStackLayout>

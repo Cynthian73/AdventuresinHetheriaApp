@@ -1,6 +1,6 @@
-﻿using AdventuresinHytheriaApp;
+﻿using AdventuresinHetheriaApp;
 
-namespace AdventuresinHytheriaApp
+namespace AdventuresinHetheriaApp
 {
     public partial class App : Application
     {

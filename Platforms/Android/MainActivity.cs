@@ -2,7 +2,7 @@
 using Android.Content.PM;
 using Android.OS;
 
-namespace AdventuresinHytheriaApp
+namespace AdventuresinHetheriaApp
 {
     [Activity(Theme = "@style/Maui.SplashTheme", 
         MainLauncher = true, 

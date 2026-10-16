@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AdventuresinHytheriaApp.Models
+namespace AdventuresinHetheriaApp.Models
 {
     [Table ("AppBuildInfo")]
     public class AppBuildInfo

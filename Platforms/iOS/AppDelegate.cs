@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace AdventuresinHytheriaApp
+namespace AdventuresinHetheriaApp
 {
     [Register("AppDelegate")]
     public class AppDelegate : MauiUIApplicationDelegate
