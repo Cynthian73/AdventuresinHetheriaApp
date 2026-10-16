@@ -13,7 +13,7 @@
         </LinearGradientBrush>
     </ContentPage.Background>
     <VerticalStackLayout>
-        <Grid RowDefinitions="*, *, *, 80,80" ColumnDefinitions="*" HorizontalOptions="Center" Padding="10">
+        <Grid RowDefinitions="*, *, *,50,50,50,50,50, 50, 50" ColumnDefinitions="*" HorizontalOptions="Center" Padding="5">
             <Image Grid.Row="0" 
                    Background="Transparent" 
                    Source="ainhpng.png" 
@@ -21,7 +21,7 @@
                    Aspect="Fill"/>
             <Label Grid.Row="1" 
                    FontFamily="Impact" 
-                   FontSize="35" 
+                   FontSize="25" 
                    TextColor="#8a9bc4" 
                    Text="Character Creation" 
                    HorizontalOptions="Center"/>
@@ -33,12 +33,12 @@
                               StrokeThickness="1"
                               x:Name="btnCharacters" 
                               WidthRequest="300"
-                              HeightRequest="50">
+                              HeightRequest="40">
                 <buttons:SfButton.Content>
                     <DataTemplate>
-                            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="8">
+                            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
                                 <Image Source="user.png" VerticalOptions="Center" HeightRequest="30" WidthRequest="30"/>
-                                <Label Text="Characters" FontFamily="Impact" FontSize="35" VerticalOptions="Center" TextColor="White"/>
+                                <Label Text="Characters" FontFamily="Impact" FontSize="25" VerticalOptions="Center" TextColor="White"/>
                             </HorizontalStackLayout>
                         </DataTemplate>
                 </buttons:SfButton.Content>
@@ -49,16 +49,114 @@
                   StrokeThickness="1"
                   x:Name="btnRaces" 
                   WidthRequest="300"
-                  HeightRequest="50">
+                  HeightRequest="40">
                 <buttons:SfButton.Content>
                     <DataTemplate>
-                        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="8">
+                        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
                             <Image Source="star.png" HeightRequest="30" VerticalOptions="Center" WidthRequest="30"/>
-                            <Label Text="Races" FontFamily="Impact" FontSize="35" VerticalOptions="Center" TextColor="White"/>
+                            <Label Text="Races" FontFamily="Impact" FontSize="25" VerticalOptions="Center" TextColor="White"/>
                         </HorizontalStackLayout>
                     </DataTemplate>
                 </buttons:SfButton.Content>
             </buttons:SfButton>
+            <buttons:SfButton Grid.Row="5" 
+                  Background="#0d1535"
+                  Stroke="#8a9bc4"
+                  StrokeThickness="1"
+                  x:Name="btnClasses" 
+                  WidthRequest="300"
+                  HeightRequest="40">
+                <buttons:SfButton.Content>
+                    <DataTemplate>
+                        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
+                            <Image Source="whitebook.png" HeightRequest="30" VerticalOptions="Center" WidthRequest="30"/>
+                            <Label Text="Classes" FontFamily="Impact" FontSize="25" VerticalOptions="Center" TextColor="White"/>
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </buttons:SfButton.Content>
+            </buttons:SfButton>
+            <buttons:SfButton Grid.Row="6" 
+                              Background="#0d1535"
+                              Stroke="#8a9bc4"
+                              StrokeThickness="1"
+                              x:Name="btnBackgrounds" 
+                              WidthRequest="300"
+                              HeightRequest="40">
+                <buttons:SfButton.Content>
+                    <DataTemplate>
+                        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
+                            <Image Source="clipboard.png" VerticalOptions="Center" HeightRequest="30" WidthRequest="30"/>
+                            <Label Text="Backgrounds" FontFamily="Impact" FontSize="25" VerticalOptions="Center" TextColor="White"/>
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </buttons:SfButton.Content>
+            </buttons:SfButton>
+            <buttons:SfButton Grid.Row="7" 
+                              Background="#0d1535"
+                              Stroke="#8a9bc4"
+                              StrokeThickness="1"
+                              x:Name="btnSkills" 
+                              WidthRequest="300"
+                              HeightRequest="40">
+                <buttons:SfButton.Content>
+                    <DataTemplate>
+                        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
+                            <Image Source="trophy.png" VerticalOptions="Center" HeightRequest="30" WidthRequest="30"/>
+                            <Label Text="Skills" FontFamily="Impact" FontSize="25" VerticalOptions="Center" TextColor="White"/>
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </buttons:SfButton.Content>
+            </buttons:SfButton>
+            <buttons:SfButton Grid.Row="8" 
+                              Background="#0d1535"
+                              Stroke="#8a9bc4"
+                              StrokeThickness="1"
+                              x:Name="btnSpells" 
+                              WidthRequest="300"
+                              HeightRequest="40">
+                <buttons:SfButton.Content>
+                    <DataTemplate>
+                        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
+                            <Image Source="wand.png" VerticalOptions="Center" HeightRequest="30" WidthRequest="30"/>
+                            <Label Text="Spells" FontFamily="Impact" FontSize="25" VerticalOptions="Center" TextColor="White"/>
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </buttons:SfButton.Content>
+            </buttons:SfButton>
+            <buttons:SfButton Grid.Row="9" 
+                              Background="#0d1535"
+                              Stroke="#8a9bc4"
+                              StrokeThickness="1"
+                              x:Name="btnMythic" 
+                              WidthRequest="300"
+                              HeightRequest="40">
+                <buttons:SfButton.Content>
+                    <DataTemplate>
+                        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
+                            <Image Source="flame.png" VerticalOptions="Center" HeightRequest="30" WidthRequest="30"/>
+                            <Label Text="Mythic" FontFamily="Impact" FontSize="25" VerticalOptions="Center" TextColor="White"/>
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </buttons:SfButton.Content>
+            </buttons:SfButton>
+            <buttons:SfButton Grid.Row="10" 
+                              Background="#0d1535"
+                              Stroke="#8a9bc4"
+                              StrokeThickness="1"
+                              x:Name="btnExpanded" 
+                              WidthRequest="300"
+                              HeightRequest="40">
+                <buttons:SfButton.Content>
+                    <DataTemplate>
+                        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
+                            <Image Source="star2.png" VerticalOptions="Center" HeightRequest="30" WidthRequest="30"/>
+                            <Label Text="Expanded" FontFamily="Impact" FontSize="25" VerticalOptions="Center" TextColor="White"/>
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </buttons:SfButton.Content>
+            </buttons:SfButton>
+
+
         </Grid>
 
     </VerticalStackLayout>
