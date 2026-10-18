@@ -1,12 +1,101 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AdventuresinHetheriaApp.Pages.DrawerContentView"
-             Title="DrawerContentView">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:navigationdrawer="clr-namespace:Syncfusion.Maui.NavigationDrawer;assembly=Syncfusion.Maui.NavigationDrawer"
+             xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             xmlns:theme="clr-namespace:Syncfusion.Maui.Themes;assembly=Syncfusion.Maui.Core"
+             xmlns:local="clr-namespace:AdventuresinHetheriaApp"
+             x:Class="AdventuresinHetheriaApp.DrawerContentView"
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+            <GradientStop Color="#0d1535" Offset="0.0" />
+            <GradientStop Color="#1e2660" Offset="0.5" />
+            <GradientStop Color="#0d1535" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <Grid RowDefinitions="40,*">
+        <Grid BackgroundColor="#1e2660" ColumnDefinitions="40,*" Grid.Row="0" ColumnSpacing="10" Padding="10,0">
+            <Image Grid.Column="0"
+                 HeightRequest="30"
+                 WidthRequest="30"
+                 HorizontalOptions="Start"
+                 Source="hamburger.png"             
+                 BackgroundColor="#1e2660">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Handle_Clicked"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label x:Name="headerLabel" 
+                   HeightRequest="50" 
+                   Grid.Column="1" 
+                   VerticalTextAlignment="Center" 
+                   Text="Home" 
+                   FontSize="16" 
+                   TextColor="White" 
+                   FontAttributes="Bold" 
+                   BackgroundColor="#1e2660"/>
+            <buttons:SfButton Grid.Column="2" 
+                  Background="#0d1535"
+                  Stroke="#8a9bc4"
+                  StrokeThickness="1"
+                  x:Name="btnNewCharacter" 
+                  Text="New Character"
+                  FontFamily="Impact" 
+                  FontSize="25" 
+                  WidthRequest="300"
+                  HeightRequest="40"
+                  Clicked="OnNewCharacterClicked"
+                  HorizontalOptions="End" />
+        </Grid>
+        <navigationdrawer:SfNavigationDrawer x:Name="navigationDrawer" Grid.Row="1">
+            <navigationdrawer:SfNavigationDrawer.DrawerSettings>
+                <navigationdrawer:DrawerSettings DrawerHeaderHeight="100" DrawerWidth="260" DrawerHeight="{OnPlatform WinUI=600}" ContentBackground="#1e2660" DrawerFooterHeight="0">
+                    <navigationdrawer:DrawerSettings.DrawerHeaderView>
+                        <Grid RowDefinitions="*,*" Padding="60">
+                            <Image Source="ainhpng.png" VerticalOptions="Center" WidthRequest="80" HeightRequest="80"/>
+                            <Label Grid.Row="1" Text="Character Creator"  VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" FontSize="16" WidthRequest="154"  HorizontalOptions="Center"/>
+                        </Grid>
+                    </navigationdrawer:DrawerSettings.DrawerHeaderView>
+
+                    <navigationdrawer:DrawerSettings.DrawerContentView>
+                        <ScrollView>
+                            <VerticalStackLayout Spacing="10" Padding="5,0">
+                                <Border StrokeThickness="0" x:Name="CharactersEffectsBorder">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="30"/>
+                                    </Border.StrokeShape>
+                                    <core:SfEffectsView x:Name="CharactersEffects" RippleBackground="#1e2660">
+                                        <core:SfEffectsView.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="CharactersTapGestureRecognizer_Tapped"/>
+                                        </core:SfEffectsView.GestureRecognizers>
+                                        <Grid Padding="20,5,10,5" HeightRequest="40">
+                                            <Label Grid.Column="1" x:Name="CharactersTitle" Text="Characters" FontSize="16" TextColor="White"  VerticalOptions="Center" HorizontalOptions="Start"/>
+                                        </Grid>
+                                    </core:SfEffectsView>
+                                </Border>
+                                <Border StrokeThickness="0" x:Name="racesEffectsBorder">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="30"/>
+                                    </Border.StrokeShape>
+                                    <core:SfEffectsView x:Name="racesEffects" RippleBackground="#1e2660">
+                                        <core:SfEffectsView.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="racesTapGestureRecognizer_Tapped"/>
+                                        </core:SfEffectsView.GestureRecognizers>
+                                        <Grid Padding="20,5,10,5" HeightRequest="40">
+                                            <Label Grid.Column="1" x:Name="racesTitle" Text="Races" FontSize="16" TextColor="White"  VerticalOptions="Center" HorizontalOptions="Start" />
+                                        </Grid>
+                                    </core:SfEffectsView>
+                                </Border>
+                            </VerticalStackLayout>
+                        </ScrollView>
+                    </navigationdrawer:DrawerSettings.DrawerContentView>
+                </navigationdrawer:DrawerSettings>
+            </navigationdrawer:SfNavigationDrawer.DrawerSettings>
+        </navigationdrawer:SfNavigationDrawer>
+    </Grid>
+
 </ContentPage>
