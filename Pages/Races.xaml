@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AdventuresinHetheriaApp.Pages.Races"
-             xmlns:editors="clr-namespace:Syncfusion.Maui.Core.Themes;assembly=Syncfusion.Maui.Inputs"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Accordion;assembly=Syncfusion.Maui.Expander"
              Title="Races">
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -12,18 +12,58 @@
         </LinearGradientBrush>
     </ContentPage.Background>
     <VerticalStackLayout>
-        <Grid RowDefinitions="*, *, *,40,40,40,40,40, 40, 40, 40, 40" ColumnDefinitions="*" HorizontalOptions="Center" Padding="5">
-            <Image Grid.Row="0" 
-               Background="Transparent" 
-               Source="ainhpng.png" 
-               HorizontalOptions="Center" 
-               Aspect="Fill"/>
-            <Label Grid.Row="1" 
-               FontFamily="Impact" 
-               FontSize="25" 
-               TextColor="#8a9bc4" 
-               Text="Races" 
-               HorizontalOptions="Center"/>
+        <Grid HorizontalOptions="Center">
+            <syncfusion:SfAccordion ExpandMode="SingleOrNone" HorizontalOptions="Center" WidthRequest="500" Padding="40">
+                <syncfusion:SfAccordion.Items>
+                    <syncfusion:AccordionItem >
+                        <syncfusion:AccordionItem.Header >
+                            <Grid  HeightRequest="48">
+                                <Label FontFamily="Impact" 
+                                       FontSize="25" 
+                                       Text="Can I download and utilize the Syncfusion .NET MAUI Accordion for free?"
+                                       TextColor="White" />
+                            </Grid>
+                        </syncfusion:AccordionItem.Header>
+                        <syncfusion:AccordionItem.Content>
+                            <Grid  BackgroundColor="#f4f4f4"
+                       RowDefinitions="Auto">
+                                <Label 
+                                    FontFamily="Impact"
+                                    Text="No, this is a commercial product and requires a paid license. However, a free community license is also available for companies and individuals whose organizations have less than $1 million USD in annual gross revenue, 5 or fewer developers, and 10 or fewer total employees."
+                                    FontSize="25" />
+                            </Grid>
+                        </syncfusion:AccordionItem.Content>
+                    </syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem>
+                        <syncfusion:AccordionItem.Header>
+                            <Grid  HeightRequest="48">
+                                <Label Text="Why should you choose the Syncfusion .NET MAUI Accordion?"
+                                       FontFamily="Impact"
+                                       FontSize="25"
+                                       TextColor="White"
+                                    />
+                            </Grid>
+                        </syncfusion:AccordionItem.Header>
+                        <syncfusion:AccordionItem.Content>
+                            <Grid BackgroundColor="#f4f4f4"
+                      RowDefinitions="Auto,Auto,Auto">
+                                <Label Grid.Row="0"
+                           Text="Easily arrange accordion items vertically."
+                           FontSize="12"
+                           Margin="16,3,0,3" />
+                                <Label Grid.Row="1"
+                           Text="Simple configuration and APIs."
+                           FontSize="12"
+                           Margin="16,3,0,3" />
+                                <Label Grid.Row="2"
+                           Text="Mobile-touch friendly."
+                           FontSize="12"
+                           Margin="16,3,0,3" />
+                            </Grid>
+                        </syncfusion:AccordionItem.Content>
+                    </syncfusion:AccordionItem>
+                </syncfusion:SfAccordion.Items>
+            </syncfusion:SfAccordion>
         </Grid>
     </VerticalStackLayout>
 </ContentPage>

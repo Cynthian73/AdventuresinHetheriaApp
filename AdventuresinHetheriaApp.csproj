@@ -76,9 +76,10 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.110" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.13" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.11.285" />
-		<PackageReference Include="Syncfusion.Maui.Inputs" Version="35.1.40" />
-		<PackageReference Include="Syncfusion.Maui.ListView" Version="35.1.40" />
-		<PackageReference Include="Syncfusion.Maui.NavigationDrawer" Version="35.1.40" />
+		<PackageReference Include="Syncfusion.Maui.Expander" Version="35.1.41" />
+		<PackageReference Include="Syncfusion.Maui.Inputs" Version="35.1.41" />
+		<PackageReference Include="Syncfusion.Maui.ListView" Version="35.1.41" />
+		<PackageReference Include="Syncfusion.Maui.NavigationDrawer" Version="35.1.41" />
 	</ItemGroup>
 
 	<ItemGroup>

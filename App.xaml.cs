@@ -1,4 +1,5 @@
 ﻿using AdventuresinHetheriaApp;
+using Syncfusion.Licensing;
 
 namespace AdventuresinHetheriaApp
 {
@@ -6,8 +7,9 @@ namespace AdventuresinHetheriaApp
     {
         public App()
         {
+            SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1JBliaF5cXmRCd1p/TH5YfUNzdUVEY1ZUTXxaS1ZhSXxVd0VhWX9YcXZQQGRVUkR9XEc=");
+
             InitializeComponent();
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1JBaF5cXmRCd1p/TH5YfUNzdUVEY1ZUTXxaS1ZhSXxVd0VjXH1ecXdUQmNcVE19XEc= ");
         }
 
         protected override Window CreateWindow(IActivationState? activationState)

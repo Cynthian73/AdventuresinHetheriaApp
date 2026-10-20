@@ -37,11 +37,11 @@ namespace AdventuresinHetheriaApp
 
         public async void OnCharactersButtonClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new DrawerContentView());
+            Navigation.PushAsync(new DrawerContentView("Characters"));
         }
         public async void OnRacesButtonClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new DrawerContentView());
+            Navigation.PushAsync(new DrawerContentView("Races"));
         }
     }
 }

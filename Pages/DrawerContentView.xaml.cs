@@ -9,19 +9,22 @@ namespace AdventuresinHetheriaApp
     public partial class DrawerContentView : ContentPage
     {
         
-        public DrawerContentView()
+        public DrawerContentView(string pageName)
         {
             InitializeComponent();
-            Initialize();           
+            Initialize(pageName);           
         }
         void Handle_Clicked(object sender, System.EventArgs e)
         {
             navigationDrawer.ToggleDrawer();
         }
 
-        private void Initialize()
+        private void Initialize(string pageName)
         {
-            navigationDrawer.ContentView = new Characters().Content;
+            if (pageName == "Character")
+                navigationDrawer.ContentView = new Characters().Content;
+            else if (pageName == "Races")
+                navigationDrawer.ContentView = new Races().Content;
         }
 
         private void ResetSelection()

@@ -10,18 +10,18 @@ namespace AdventuresinHetheriaApp.Data
 {
     class DatabaseServices
     {
-        private readonly SQLiteConnection _database;
+        public SQLiteConnection DatabaseConnection { get; }
 
         public static string DbPath { get; } = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "AdventuresinHetheriaDB.db3");
 
         public DatabaseServices()
         {
-            _database = new SQLiteConnection(DbPath);
+            DatabaseConnection = new SQLiteConnection(DbPath);
         }
 
-        public async Task<string> GetAppBuildInfo()   
+        public async Task<string> GetAppBuildInfo()
         {
-            string AppVersionInfo =  _database.ExecuteScalar<string>("SELECT AppVersion FROM AppBuildInfo");
+            string AppVersionInfo =  DatabaseConnection.ExecuteScalar<string>("SELECT AppVersion FROM AppBuildInfo");
 
             return AppVersionInfo;
         }
