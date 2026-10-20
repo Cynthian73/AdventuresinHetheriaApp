@@ -10,13 +10,12 @@ namespace AdventuresinHetheriaApp
         {
             InitializeComponent();
             bool dbExists = File.Exists(DatabaseServices.DbPath);
-            if (!dbExists)
-                CopyDatabase();
-            else
-            {
-                Task<string> appBuildInfoTask = new DatabaseServices().GetAppBuildInfo();
-                lblVersion.Text = "Version " + appBuildInfoTask.Result;
-            }
+            if (dbExists)
+              File.Delete(DatabaseServices.DbPath);
+            CopyDatabase();
+                
+            Task<string> appBuildInfoTask = new DatabaseServices().GetAppBuildInfo();
+            lblVersion.Text = "Version " + appBuildInfoTask.Result;
         }
 
         public void CopyDatabase()
