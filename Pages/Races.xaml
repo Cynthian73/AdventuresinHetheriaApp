@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Accordion;assembly=Syncfusion.Maui.Expander"
              x:Class="AdventuresinHetheriaApp.Pages.Races"
-             xmlns:local="clr-namespace:AdventuresinHetheriaApp.Views"
-             xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             xmlns:models="clr-namespace:AdventuresinHetheriaApp.Models"
+
              Title="Races">
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -12,26 +13,20 @@
             <GradientStop Color="#0d1535" Offset="1.0" />
         </LinearGradientBrush>
     </ContentPage.Background>
-    <ContentPage.BindingContext>
-        <local:RacesView />
-    </ContentPage.BindingContext>
-    <VerticalStackLayout>
-        <Border BackgroundColor="#2C3E50" 
-                StrokeShape="RoundRectangle 8" 
-                Padding="15,10"
-                Margin="10">
-            <Grid Padding="20">
-                <CollectionView x:Name="myCollectionView" ItemsSource="{Binding Races}">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <VerticalStackLayout Padding="10">
-                                <Label Text="{Binding RaceName}" FontSize="18" FontAttributes="Bold"/>
-                                <Label Text="{Binding Speed}" FontSize="14" TextColor="Gray"/>
-                            </VerticalStackLayout>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </Grid>
-        </Border>
-    </VerticalStackLayout>
+    <syncfusion:SfAccordion BindableLayout.ItemsSource ="{Binding RaceItems}">
+        <BindableLayout.ItemTemplate>
+            <DataTemplate x:DataType="models:Race">
+                <syncfusion:AccordionItem>
+
+                    <syncfusion:AccordionItem.Header
+                        <Label Text="{Binding RaceName}" FontAttributes="Bold" Padding="10"/>
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                        <Label Text="{Binding Speed}" Padding="10"/>
+                    </syncfusion:AccordionItem.Content>
+
+                </syncfusion:AccordionItem>
+            </DataTemplate>
+        </BindableLayout.ItemTemplate>
+    </syncfusion:SfAccordion>
 </ContentPage>

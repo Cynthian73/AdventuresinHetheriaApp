@@ -1,14 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+﻿using AdventuresinHetheriaApp.Data;
+using SQLite;
+using Syncfusion.Maui.Accordion;
 
 namespace AdventuresinHetheriaApp.Models
 {
-    [Table ("Races_LT")]
-    public class Race
+
+    class Race
     {
+
+        public int ID { get; set; }
         public string RaceName { get; set; }
         public int Speed { get; set; }
+
     }
 }

@@ -1,16 +1,26 @@
-﻿using AdventuresinHetheriaApp.Data;
-using AdventuresinHetheriaApp.Models;
+﻿using AdventuresinHetheriaApp.Models;
 using SQLite;
+using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace AdventuresinHetheriaApp.Repositories
 {
-    internal class RaceRepository
+    class RaceRepository
     {
+        private readonly SQLiteAsyncConnection _database;
+
+        public RaceRepository(string dbPath)
+        {
+            _database = new SQLiteAsyncConnection(dbPath);
+        }
+
         public async Task<List<Race>> GetRaces()
         {
-            SQLiteConnection db = new SQLiteConnection(DatabaseServices.DbPath);
-            return db.Query<Race>("SELECT RaceName, Speed FROM Races_LT R");
+            string sql = "SELECT * FROM Races_LT";
+
+            return await _database.QueryAsync<Race>(sql);
         }
+
     }
 }
