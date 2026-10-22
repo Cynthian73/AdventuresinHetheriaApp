@@ -13,20 +13,75 @@
             <GradientStop Color="#0d1535" Offset="1.0" />
         </LinearGradientBrush>
     </ContentPage.Background>
-    <syncfusion:SfAccordion BindableLayout.ItemsSource ="{Binding RaceItems}">
-        <BindableLayout.ItemTemplate>
-            <DataTemplate x:DataType="models:Race">
-                <syncfusion:AccordionItem>
+    <Grid HorizontalOptions="Start" WidthRequest="1000" Padding="20">
+        <syncfusion:SfAccordion BindableLayout.ItemsSource ="{Binding RaceItems}" ExpandMode="SingleOrNone">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate x:DataType="models:Race">
+                    <syncfusion:AccordionItem Padding="5">
+                        <syncfusion:AccordionItem.Header>
+                            <Grid RowDefinitions="40,35" Padding="10" >
+                                <Label Text="{Binding RaceName}" FontFamily="Impact" FontSize="25" TextColor="#e3a54d" Padding="5"/>
+                                <Label Grid.Row="1" FontFamily="Impact" FontSize="25" TextColor="#7f4415" Padding="5">
+                                    <Label.Text>
+                                        <MultiBinding StringFormat="Speed: {0} * Favored Classes: {1} and {2}">
+                                            <Binding Path="Speed"/>
+                                            <Binding Path="Class1"/>
+                                            <Binding Path="Class2"/>
+                                        </MultiBinding>
+                                    </Label.Text>
+                                </Label>
+                            </Grid>
+                        </syncfusion:AccordionItem.Header>
+                        <syncfusion:AccordionItem.Content>
+                            <Border BindingContext="{Binding .}"
+                                    Stroke="#CCCCCC"
+                                    StrokeThickness="1"
+                                    BackgroundColor="#1e2660"
+                                    Padding="12,8">                 
+                                <Grid RowDefinitions="30,30,30,30" ColumnDefinitions="200,400" Padding="10,1">
+                                <Label Grid.Row="0" Grid.Column="0" VerticalOptions="End" Text="Favored Classes" FontFamily="Impact" FontSize="25" TextColor="#F6965E" />
+                                <Label Grid.Row="0" Grid.Column="1" VerticalOptions="End" HorizontalOptions="Start" TextColor="#7f4415" FontFamily="Impact" FontSize="25" >
+                                    <Label.Text >
+                                        <MultiBinding StringFormat=": {0} and {1}">
+                                            <Binding Path="Class1"/>
+                                            <Binding Path="Class2"/>
+                                        </MultiBinding>
+                                    </Label.Text>
+                                </Label>
+                                <Label Grid.Row="2" Grid.Column="0" VerticalOptions="End" Text="Stat Adjustments" FontFamily="Impact" FontSize="25" TextColor="#F6965E" />
+                                <Grid Grid.Row="3" Grid.ColumnSpan="2" ColumnDefinitions="160,160,160">
+                                    <Label Grid.Row="0" Grid.Column="0" VerticalOptions="End" HorizontalOptions="Start" TextColor="#29cd8d" FontFamily="Impact" FontSize="25" >
+                                        <Label.Text >
+                                                <MultiBinding StringFormat="{}  {0} :{1}">
+                                                <Binding Path="Stat1"/>
+                                                <Binding Path="Adjustment1"/>
+                                            </MultiBinding>
+                                        </Label.Text>
+                                    </Label>
+                                    <Label Grid.Row="1" Grid.Column="1" VerticalOptions="End" HorizontalOptions="Start" TextColor="#29cd8d" FontFamily="Impact" FontSize="25" >
+                                        <Label.Text >
+                                                <MultiBinding StringFormat="{}  {0} :{1}">
+                                                <Binding Path="Stat2"/>
+                                                <Binding Path="Adjustment2"/>
+                                            </MultiBinding>
+                                        </Label.Text>
+                                    </Label>
+                                    <Label Grid.Row="1" Grid.Column="2" VerticalOptions="End" HorizontalOptions="Start" TextColor="#F07877" FontFamily="Impact" FontSize="25" >
+                                        <Label.Text >
+                                                <MultiBinding StringFormat="{}  {0} :{1}">
+                                                <Binding Path="Stat3"/>
+                                                <Binding Path="Adjustment3"/>
+                                            </MultiBinding>
+                                        </Label.Text>
+                                    </Label>
+                                </Grid>
 
-                    <syncfusion:AccordionItem.Header
-                        <Label Text="{Binding RaceName}" FontAttributes="Bold" Padding="10"/>
-                    </syncfusion:AccordionItem.Header>
-                    <syncfusion:AccordionItem.Content>
-                        <Label Text="{Binding Speed}" Padding="10"/>
-                    </syncfusion:AccordionItem.Content>
-
-                </syncfusion:AccordionItem>
-            </DataTemplate>
-        </BindableLayout.ItemTemplate>
-    </syncfusion:SfAccordion>
+                            </Grid>
+                            </Border>
+                        </syncfusion:AccordionItem.Content>
+                    </syncfusion:AccordionItem>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </syncfusion:SfAccordion>
+    </Grid>
 </ContentPage>

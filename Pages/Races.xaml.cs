@@ -16,12 +16,13 @@ public partial class Races: ContentPage
     public async void Initialize()
     {
 
-        RaceRepository service = new RaceRepository();
+        RaceRepository service = new RaceRepository(DatabaseServices.DbPath);
 
         // Await the task to unpack the List<Race>
         List<Race> races = await  service.GetRaces();
 
         // Assign it directly to a UI control's ItemSource
-        myCollectionView.ItemsSource = races;
+        var RaceItems = new ObservableCollection<Race>(races);
+        BindingContext = new { RaceItems };
     }
 }

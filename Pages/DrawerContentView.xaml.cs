@@ -21,7 +21,7 @@ namespace AdventuresinHetheriaApp
 
         private void Initialize(string pageName)
         {
-            if (pageName == "Character")
+            if (pageName == "Characters")
                 navigationDrawer.ContentView = new Characters().Content;
             else if (pageName == "Races")
                 navigationDrawer.ContentView = new Races().Content;
